@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    Copyright (C) 2009 eXo Platform SAS.
+    
+    This is free software; you can redistribute it and/or modify it
+    under the terms of the GNU Lesser General Public License as
+    published by the Free Software Foundation; either version 2.1 of
+    the License, or (at your option) any later version.
+    
+    This software is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+    
+    You should have received a copy of the GNU Lesser General Public
+    License along with this software; if not, write to the Free
+    Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+    02110-1301 USA, or see the FSF site: http://www.fsf.org.
+
+-->
+
+<configuration
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+  <component>
+    <type>org.exoplatform.services.deployment.WCMContentInitializerService</type>
+  </component>
+
+  <external-component-plugins>
+    <target-component>org.exoplatform.services.wcm.portal.artifacts.CreatePortalArtifactsService</target-component>
+    <component-plugin>
+      <name>Add ecp as ignored portal</name>
+      <set-method>addIgnorePortalPlugin</set-method>
+      <type>org.exoplatform.services.wcm.portal.artifacts.IgnorePortalPlugin</type>
+      <init-params>
+        <values-param>
+          <name>ignored.portals</name>
+          <value>ecp</value>
+        </values-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+  <external-component-plugins>
+    <target-component>org.exoplatform.services.deployment.WCMContentInitializerService</target-component>
+    <component-plugin>
+      <name>Content Initializer Service</name>
+      <set-method>addPlugin</set-method>
+      <type>org.exoplatform.services.deployment.plugins.XMLDeploymentPlugin</type>
+      <description>XML Deployment Plugin</description>
+      <init-params>
+        <object-param>
+          <name>ECP French translations directory</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/FrenchTranslations.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Logo data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Logo.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Users data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Users.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        <object-param>
+          <name>Acme LoginLink Register</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/LinkHome.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <!--object-param>
+          <name>ECP Signin data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>              
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Signin.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>               
+          </object>
+        </object-param-->
+        <object-param>
+          <name>ECP Signin_en data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Signin_en.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <!--object-param>
+			<name>ECP Signin_fr data</name>
+            <description>Deployment Descriptor</description>
+            <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+				<field name="target">
+					<object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+						<field name="workspace">
+							<string>collaboration</string>
+						</field>
+						<field name="nodePath">
+							<string>/sites content/live/ecp/web contents/site artifacts</string>
+						</field>
+					</object>
+				</field>
+				<field name="sourcePath">
+					<string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Signin_fr.xml</string>
+				</field>
+                <field name="cleanupPublication">
+					<boolean>true</boolean>
+				</field>
+			</object>
+		</object-param-->
+        <object-param>
+          <name>ECP Searchbox data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Searchbox.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Navigation data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Navigation.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>               
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Social Bookmarking data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/SocialBookmarking.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>               
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Footer data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Footer.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>               
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Introduce data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Introduce.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>            
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Stylesheet Green data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/css</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/StylesheetGreen.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Stylesheet Blue data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/css</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/StylesheetBlue.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>            
+          </object>
+        </object-param>
+        <!--
+		<object-param>
+          <name>ECP jquery.js data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/js</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/jquery-js.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        -->
+        <!--
+        <object-param>
+          <name>ECP jcarousellite.js data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/js</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/jcarousellite-js.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>            
+          </object>
+        </object-param>
+		-->
+        <object-param>
+          <name>ECP JcarouselliteImages data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/medias/images</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/JcarouselliteImages.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Images data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/medias/images</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Images.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Flags data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/medias/images</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Flags.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP News data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/News.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Events data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Events.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP NewEvents data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/NewEvents.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        
+        <object-param>        
+          <name>ECP Contact US Intro data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field  name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field  name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field  name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field  name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/ContactUSIntro.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>        
+          <name>ECP Contact US Countries data</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field  name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field  name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field  name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field  name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Locations.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Doc Word</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/documents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/DocWord.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>              
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Doc Jpg</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/documents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/DocJpg.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+
+        </object-param>
+        <object-param>
+          <name>ECP Doc Pdf</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/documents</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/DocPdf.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>  
+        </object-param>
+        <object-param>
+          <name>ECP Newsletter header</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/NewsletterHeader.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>             
+          </object>
+        </object-param>
+        <object-param>
+          <name>ECP Form Confirmation</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.DeploymentDescriptor">
+            <field name="target">
+              <object type="org.exoplatform.services.deployment.DeploymentDescriptor$Target">
+                <field name="workspace">
+                  <string>collaboration</string>
+                </field>
+                <field name="nodePath">
+                  <string>/sites content/live/ecp/web contents/site artifacts</string>
+                </field>
+              </object>
+            </field>
+            <field name="sourcePath">
+              <string>war:/conf/ecp-extension/wcm/artifacts/site-resources/ecp/Confirmation.xml</string>
+            </field>
+            <field name="cleanupPublication">
+              <boolean>true</boolean>
+            </field>            
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+    <component-plugin>
+      <name>Content Initializer Service</name>
+      <set-method>addPlugin</set-method>
+      <type>org.exoplatform.services.deployment.plugins.LinkDeploymentPlugin</type>
+      <description>Link Deployment Plugin</description>
+      <init-params>
+        <!-- put "acme-news-1" in categories -->
+        <object-param>
+          <name>news1Link</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+        <!--object-param>
+          <name>news1SpecialOffersLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Special Offers</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>news1FromTheLabLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/From The Lab</string>
+            </field>
+          </object>
+        </object-param-->
+        <!-- put "acme-news-2" in categories -->
+        <object-param>
+          <name>news2Link</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+        <!--object-param>
+          <name>news2SpecialOffersLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Special Offers</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>news2FromTheLabLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/From The Lab</string>
+            </field>
+          </object>
+        </object-param-->
+        <!-- put "acme-news-3" in categories 
+        <object-param>
+          <name>news3Link</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-3</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+		-->
+        <!--object-param>
+          <name>news3SpecialOffersLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-3</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Special Offers</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>news3FromTheLabLink</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-3</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/From The Lab</string>
+            </field>
+          </object>
+        </object-param-->
+
+
+
+        <object-param>
+          <name>ecpNews1All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpNews2All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpEvent1All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpEvent2All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpEvent3All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event3</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpEvent4All</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event4</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All</string>
+            </field>
+          </object>
+        </object-param>
+
+
+        <object-param>
+          <name>ecpEvent1Fire</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Fire</string>
+            </field>
+          </object>
+        </object-param>
+
+
+        <object-param>
+          <name>ecpEvent2Water</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Water</string>
+            </field>
+          </object>
+        </object-param>
+
+
+        <object-param>
+          <name>ecpEvent4Air</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event4</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Air</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpNews1Air</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-1</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Air</string>
+            </field>
+          </object>
+        </object-param>
+
+
+        <object-param>
+          <name>ecpEvent3Earth</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Events/Event3</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Earth</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>ecpNews2Earth</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/News/acme-news-2</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/events/All/Earth</string>
+            </field>
+          </object>
+        </object-param>
+        
+        <object-param>
+          <name>x-RayVision</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/X-Ray</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Defense/Vision</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>nightVision</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Night Vision</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Defense/Vision</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>fireAcme</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Fire</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>fireNaturalElements</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Fire</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Natural Elements</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>iceAcme</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Ice</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>iceNaturalElements</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Ice</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Natural Elements</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>windNaturalElements</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Wind</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Natural Elements</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>speedMovement</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Speed</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Movement</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>flightAcme</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Flight</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>flightMovement</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Flight</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Movement</string>
+            </field>
+          </object>
+        </object-param>
+        <object-param>
+          <name>timeTravelMovement</name>
+          <description>Deployment Descriptor</description>
+          <object type="org.exoplatform.services.deployment.plugins.LinkDeploymentDescriptor">
+            <field name="sourcePath">
+              <string>repository:collaboration:/sites content/live/ecp/web contents/Time Travel</string>
+            </field>
+            <field name="targetPath">
+              <string>repository:collaboration:/sites content/live/ecp/categories/ecp/Movement</string>
+            </field>
+          </object>
+        </object-param>
+
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+
+</configuration>

@@ -13,6 +13,6 @@
 	<description>ECP Extension War</description>
 
 	<build>
-		<finalName>ecp-extension-war</finalName>
+		<finalName>ecp-extension</finalName>
 	</build>
 </project>

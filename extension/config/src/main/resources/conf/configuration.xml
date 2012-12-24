@@ -46,7 +46,10 @@
 						<field name="dependencies">
 							<collection type="java.util.ArrayList">
 								<value>
-									<string>ecp-extension-war</string>
+									<string>ecp-extension</string>
+								</value>
+								<value>
+									<string>acme-websiteResources</string>
 								</value>
 							</collection>
 						</field>

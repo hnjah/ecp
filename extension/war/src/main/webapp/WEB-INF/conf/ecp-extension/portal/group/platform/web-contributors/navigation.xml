@@ -20,12 +20,34 @@
 
 -->
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_2.xsd http://www.exoplaform.org/xml/ns/kernel_1_2.xsd"
-	xmlns="http://www.exoplaform.org/xml/ns/kernel_1_2.xsd">
-	<import>war:/conf/ecp-extension/portal/portal-configuration.xml</import>
-	<import>war:/conf/ecp-extension/portal/resource-bundle-configuration.xml</import>
-	<import>war:/conf/ecp-extension/wcm/application-templates-configuration.xml</import>
-	<import>war:/conf/ecp-extension/wcm/deployment/ecp-deployment-configuration.xml</import>
-	<import>war:/conf/ecp-extension/wcm/taxonomy/ecp-taxonomies-configuration.xml</import>
-	<import>war:/conf/ecp-extension/wcm/taxonomy/events-taxonomies-configuration.xml</import>
-</configuration>
+<node-navigation>
+  <owner-type>group</owner-type>
+  <owner-id>platform/web-contributors</owner-id>
+  <priority>1</priority>
+
+  <page-nodes>
+
+      <node>
+        <uri>siteExplorer</uri>
+        <name>siteExplorer</name>
+        <label>#{administration.siteExplorer}</label>
+        <page-reference>group::platform/web-contributors::SiteExplorer</page-reference>
+      </node>
+
+      <node>
+        <uri>editor</uri>
+        <name>editor</name>
+        <label>#{administration.editor}</label>
+        <visibility>HIDDEN</visibility>
+        <page-reference>group::platform/web-contributors::Editor</page-reference>
+      </node>
+
+      <node>
+        <uri>wcmAdmin</uri>
+        <name>wcmAdmin</name>
+        <label>#{administration.wcmAdmin}</label>
+        <page-reference>group::platform/web-contributors::WcmAdmin</page-reference>
+      </node>
+
+  </page-nodes>
+</node-navigation>
