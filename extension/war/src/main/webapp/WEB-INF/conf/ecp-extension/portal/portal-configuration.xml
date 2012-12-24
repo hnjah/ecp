@@ -71,6 +71,9 @@
 								<value>
 									<string>/platform/web-contributors</string>
 								</value>
+								<value>
+									<string>/developers</string>
+								</value>       
 							</collection>
 						</field>
 						<field name="ownerType">

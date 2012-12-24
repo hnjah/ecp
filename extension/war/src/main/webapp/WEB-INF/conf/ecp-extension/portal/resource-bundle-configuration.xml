@@ -41,12 +41,14 @@
         			<value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
 					<value>locale.navigation.group.organization.employees</value>
+					<value>locale.navigation.group.developers</value>
 				</values-param>
 				<values-param>
 					<name>portal.resource.names</name>
 			        <value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
 					<value>locale.navigation.group.organization.employees</value>
+					<value>locale.navigation.group.developers</value>
 				</values-param>
 			</init-params>
 		</component-plugin>
