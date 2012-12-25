@@ -30,4 +30,6 @@
 	<import>war:/conf/ecp-extension/wcm/deployment/ecp-deployment-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/taxonomy/ecp-taxonomies-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/taxonomy/events-taxonomies-configuration.xml</import>
+	<import>war:/conf/ecp-extension/wcm/namespace-configuration.xml</import>
+	<import>war:/conf/ecp-extension/wcm/nodetypes-configuration.xml</import>
 </configuration>
