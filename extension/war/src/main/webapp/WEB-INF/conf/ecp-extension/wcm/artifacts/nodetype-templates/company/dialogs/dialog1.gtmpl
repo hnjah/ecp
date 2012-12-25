@@ -8,6 +8,11 @@
   uicomponent.addHiddenField("hiddenInput2", hiddenField2) ;
   uicomponent.addHiddenField("hiddenInput3", hiddenField3) ;
 %>
+<% 
+if(!uicomponent.isEditing()) {
+uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupInterceptor.groovy", "post");
+}
+%>
 <div class="UIForm LayoutContent">
 	<% uiform.begin() %>
   <div class="HorizontalLayout">

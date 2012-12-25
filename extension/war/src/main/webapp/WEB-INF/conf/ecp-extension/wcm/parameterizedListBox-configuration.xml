@@ -8,7 +8,7 @@
 		<init-params>
 			<value-param>
 				<name>companyTypes</name>
-				<value>Customer,Partner,Lead</value>
+				<value>customer,partners,leads</value>
 			</value-param>
 		</init-params>
 	</component>
