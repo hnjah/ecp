@@ -40,6 +40,7 @@
 					<name>init.resources</name>
         			<value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
+        			<value>locale.navigation.group.platform.administrators</value>
 					<value>locale.navigation.group.developers</value>
 					<value>locale.navigation.group.customer</value>
 					<value>locale.navigation.group.partners</value>
@@ -55,6 +56,7 @@
 					<name>portal.resource.names</name>
 			        <value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
+        			<value>locale.navigation.group.platform.administrators</value>
 					<value>locale.navigation.group.developers</value>
 					<value>locale.navigation.group.customer</value>
 					<value>locale.navigation.group.partners</value>

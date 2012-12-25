@@ -72,6 +72,9 @@
 									<string>/platform/web-contributors</string>
 								</value>
 								<value>
+									<string>/platform/administrators</string>
+								</value>
+								<value>
 									<string>/developers</string>
 								</value>
 								<value>

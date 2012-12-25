@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <administration>
+      <title>Administration</title>
+      <manageCompanyInfo>Manage company info</manageCompanyInfo>
+      <addNewCompany>Add new company</addNewCompany>
+  </administration>
+</bundle>
+
