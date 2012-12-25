@@ -73,7 +73,31 @@
 								</value>
 								<value>
 									<string>/developers</string>
-								</value>       
+								</value>
+								<value>
+									<string>/leads</string>
+								</value>
+								<value>
+									<string>/customer</string>
+								</value>
+								<value>
+									<string>/partners</string>
+								</value>
+								<value>
+									<string>/organization/sales</string>
+								</value>
+								<value>
+									<string>/organization/support</string>
+								</value>
+								<value>
+									<string>/organization/consultants</string>
+								</value>
+								<value>
+									<string>/organization/employees</string>
+								</value>
+								<value>
+									<string>/organization/companyManagers</string>
+								</value>
 							</collection>
 						</field>
 						<field name="ownerType">

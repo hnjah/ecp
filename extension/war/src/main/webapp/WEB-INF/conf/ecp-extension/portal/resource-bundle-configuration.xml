@@ -40,15 +40,29 @@
 					<name>init.resources</name>
         			<value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
-					<value>locale.navigation.group.organization.employees</value>
 					<value>locale.navigation.group.developers</value>
+					<value>locale.navigation.group.customer</value>
+					<value>locale.navigation.group.partners</value>
+					<value>locale.navigation.group.leads</value>
+					<value>locale.navigation.group.organization.sales</value>
+					<value>locale.navigation.group.organization.support</value>
+					<value>locale.navigation.group.organization.consultants</value>
+					<value>locale.navigation.group.organization.employees</value>
+					<value>locale.navigation.group.organization.companyManagers</value>
 				</values-param>
 				<values-param>
 					<name>portal.resource.names</name>
 			        <value>locale.navigation.portal.ecp</value>
         			<value>locale.navigation.group.platform.web-contributors</value>
-					<value>locale.navigation.group.organization.employees</value>
 					<value>locale.navigation.group.developers</value>
+					<value>locale.navigation.group.customer</value>
+					<value>locale.navigation.group.partners</value>
+					<value>locale.navigation.group.leads</value>
+					<value>locale.navigation.group.organization.sales</value>
+					<value>locale.navigation.group.organization.support</value>
+					<value>locale.navigation.group.organization.consultants</value>
+					<value>locale.navigation.group.organization.employees</value>
+					<value>locale.navigation.group.organization.companyManagers</value>
 				</values-param>
 			</init-params>
 		</component-plugin>
