@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+  <Company>
+      <label>
+        <id>Company ID:</id>
+        <name>Company Name:</name>
+        <address>Address:</address>
+        <website>Web Site:</website>
+        <phone>Phone:</phone>
+        <country>Country:</country>
+        <logo>Company Logo:</logo>
+        <email>Company Email:</email>
+        <type>Type:</type>
+      </label>
+  </Company>  
+</bundle>

@@ -6,31 +6,31 @@
             <supertype>nt:base</supertype>
         </supertypes>
         <propertyDefinitions>
-            <propertyDefinition name="ecp:title" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:name" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:address" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:address" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:website" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:website" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:phone" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:phone" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:country" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:country" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:email" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:email" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>
-            <propertyDefinition name="ecp:type" requiredType="String" autoCreated="false" mandatory="false"
+            <propertyDefinition name="ecp:type" requiredType="String" autoCreated="false" mandatory="true"
                                 onParentVersion="COPY" protected="false" multiple="false">
                 <valueConstraints/>
             </propertyDefinition>

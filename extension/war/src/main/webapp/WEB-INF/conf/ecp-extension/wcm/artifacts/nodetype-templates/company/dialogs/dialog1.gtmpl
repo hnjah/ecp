@@ -1,0 +1,136 @@
+<%
+  import org.exoplatform.container.PortalContainer;
+  import org.exoplatform.ecp.services.ParameterizedListBoxService;
+  String[] hiddenField1 = ["jcrPath=/node/ecp:logo", "nodetype=nt:resource", "visible=false"] ; 
+  String[] hiddenField2 = ["jcrPath=/node/ecp:logo/jcr:encoding", "visible=false", "UTF-8"] ;
+  String[] hiddenField3 = ["jcrPath=/node/ecp:logo/jcr:lastModified", "visible=false"] ;
+  uicomponent.addHiddenField("hiddenInput1", hiddenField1) ;
+  uicomponent.addHiddenField("hiddenInput2", hiddenField2) ;
+  uicomponent.addHiddenField("hiddenInput3", hiddenField3) ;
+%>
+<div class="UIForm LayoutContent">
+	<% uiform.begin() %>
+  <div class="HorizontalLayout">
+  	<table class="UIFormGrid">
+  		<tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.name")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldTitle = ["jcrPath=/node/ecp:name", "validate=empty"] ;
+		        uicomponent.addTextField("title", fieldTitle) ;
+		      %>
+		    </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.id")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldName = ["jcrPath=/node", "editable=if-null", "validate=empty,name"] ;
+		        uicomponent.addTextField("name", fieldName) ;  
+		      %>
+		    </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.address")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldAddress = ["jcrPath=/node/ecp:address", "validate=empty"] ;
+		        uicomponent.addTextAreaField("address", fieldAddress) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.phone")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldPhone = ["jcrPath=/node/ecp:phone", "validate=empty"] ;
+		        uicomponent.addTextField("phone", fieldPhone) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.country")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldCountry = ["jcrPath=/node/ecp:country", "validate=empty"] ;
+		        uicomponent.addTextField("country", fieldCountry) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.website")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldWebsite = ["jcrPath=/node/ecp:website", "validate=empty"] ;
+		        uicomponent.addTextField("website", fieldWebsite) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.email")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        String[] fieldEmail = ["jcrPath=/node/ecp:email", "validate=empty"] ;
+		        uicomponent.addTextField("email", fieldEmail) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.type")%></td>
+	      <td class="FieldComponent">
+		      <%
+		      	ParameterizedListBoxService parameterizedListBoxService = (ParameterizedListBoxService) PortalContainer.getInstance().getComponentInstanceOfType(ParameterizedListBoxService.class);
+		        String[] fieldType = ["jcrPath=/node/ecp:type", "options="+parameterizedListBoxService.getCompanyPaths(), "onchange=false", "validate=empty"] ;
+		        uicomponent.addSelectBoxField("type", fieldType) ;
+	      	%>
+	      </td>
+	    </tr>
+	    <tr>		          					
+	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.logo")%></td>
+	      <td class="FieldComponent">
+		      <%
+		        if(uicomponent.isEditing()) { 
+							def curNode = uicomponent.getNode() ;
+							if(curNode.hasNode("ecp:logo")) {
+								def logoNode = curNode.getNode("ecp:logo") ;
+								if(logoNode.getProperty("jcr:data").getStream().available() > 0) {
+									def logoSrc = uicomponent.getImage(curNode, "ecp:logo");
+									def actionLink = uicomponent.event("RemoveData", "/ecp:logo");
+						%>		
+									<div>
+										<img src="$logoSrc" width="100px" height="80px"/>
+										<a href="$actionLink">
+											<img src="/eXoResources/skin/DefaultSkin/background/Blank.gif" alt="" class="ActionIcon Remove16x16Icon"/>
+										</a>
+									</div>
+						<%
+								} else {
+					        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
+					        uicomponent.addUploadField("logo", fieldLogo) ;								
+								}
+							}
+						} else if(uicomponent.dataRemoved()) {
+			        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
+			        uicomponent.addUploadField("logo", fieldLogo) ;						
+						}	else {
+			        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
+			        uicomponent.addUploadField("logo", fieldLogo) ;
+						}
+		      %>
+		    </td>
+	    </tr>
+	  </table>
+		<%/* start render action*/%>
+		<div class="UIAction"> 
+			<% for(action in uicomponent.getActions()) { 
+			      		 String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action) ;
+								 String link = uicomponent.event(action) ;
+			%>
+				<a  onclick="$link" class="ActionButton LightBlueStyle" href="javascript:void(0);">$actionLabel</a>
+			<%}%>          
+	    </div>
+	  <%/* end render action*/%>
+	  
+  </div>
+  <% uiform.end() %>
+</div>

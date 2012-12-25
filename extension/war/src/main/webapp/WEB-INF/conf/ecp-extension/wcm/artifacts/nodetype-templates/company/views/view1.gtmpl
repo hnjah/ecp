@@ -1,0 +1,127 @@
+<%  
+  	def currentNode = uicomponent.getNode() ;
+%>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.name")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:name")) {
+		  					                    print currentNode.getProperty("ecp:name").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.id")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("exo:name")) {
+		  					                    print currentNode.getProperty("exo:name").getString() ;
+		  					                  }
+		  %>								
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.address")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:address")) {
+		  					                    print currentNode.getProperty("ecp:address").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.phone")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:phone")) {
+		  					                    print currentNode.getProperty("ecp:phone").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.country")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:country")) {
+		  					                    print currentNode.getProperty("ecp:country").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.website")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:website")) {
+		  					                    print currentNode.getProperty("ecp:website").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.email")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:email")) {
+		  					                    print currentNode.getProperty("ecp:email").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.type")%></strong>
+		  <%
+		  					                  if(currentNode.hasProperty("ecp:type")) {
+		  					                    print currentNode.getProperty("ecp:type").getString() ;
+		  					                  }
+		  %>									
+		      </div>
+		    </div>
+		  </div>
+		  <br/>
+		  <%
+		  if(currentNode.hasNode("ecp:logo")) {
+			  def logoNode = currentNode.getNode("ecp:logo");
+              if (logoNode.getProperty("jcr:data").getStream().available() > 0) {
+           	   logoSrc = uicomponent.getImage(currentNode, "ecp:logo");
+          %>
+		  <div class="FieldContent">
+		    <div class="FieldContainerContent">
+		      <div class="LabelContent">
+		        <strong><%=_ctx.appRes("Company.label.logo")%></strong>
+				<div style= "width: 95%; height: 160px ; text-align: center; padding: 5px;">
+					<img src="$logoSrc" width="250" height="150"/> 
+				</div>									
+		      </div>
+		    </div>
+		  </div>
+		  <%
+              }
+		  }
+		  %>
