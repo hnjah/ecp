@@ -15,5 +15,6 @@
 	<description>ECP Api</description>
 
 	<modules>
+		<module>ecp-api-listener</module>
 	</modules>
 </project>
