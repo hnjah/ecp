@@ -32,7 +32,10 @@
 	<import>war:/conf/ecp-extension/wcm/taxonomy/events-taxonomies-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/namespace-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/nodetypes-configuration.xml</import>
+
 	<import>war:/conf/ecp-extension/wcm/nodetype-templates-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/parameterizedList-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/scripts-configuration.xml</import>
+
+	<import>war:/conf/ecp-extension/listener/newuser-configuration.xml</import>
 </configuration>
