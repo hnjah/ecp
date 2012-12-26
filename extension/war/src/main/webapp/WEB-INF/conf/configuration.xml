@@ -33,6 +33,6 @@
 	<import>war:/conf/ecp-extension/wcm/namespace-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/nodetypes-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/nodetype-templates-configuration.xml</import>
-	<import>war:/conf/ecp-extension/wcm/parameterizedListBox-configuration.xml</import>
+	<import>war:/conf/ecp-extension/wcm/parameterizedList-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/scripts-configuration.xml</import>
 </configuration>

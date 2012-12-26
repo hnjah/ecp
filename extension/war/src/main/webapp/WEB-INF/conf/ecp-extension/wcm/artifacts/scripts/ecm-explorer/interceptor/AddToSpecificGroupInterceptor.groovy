@@ -32,19 +32,21 @@ public class AddToSpecificGroupInterceptor implements CmsScript {
 			String companyName = srcNode.getProperty("ecp:name").getString();
 			if (srcNode.hasProperty("ecp:type")) {
 				String companyType = srcNode.getProperty("ecp:type").getString();
-				Group companyTypeGroup = organizationService_.getGroupHandler().findGroupById(companyType)
-				if (companyTypeGroup == null){
-				    companyTypeGroup = organizationService_.getGroupHandler().createGroupInstance();
-				    companyTypeGroup.setGroupName(companyType);
-					companyTypeGroup.setLabel(companyType);
-					companyTypeGroup.setDescription("the " + companyType + " group");
-					organizationService_.getGroupHandler().addChild(null, companyTypeGroup, true);
+				if (!companyType.equals("leads")) {
+					Group companyTypeGroup = organizationService_.getGroupHandler().findGroupById(companyType)
+					if (companyTypeGroup == null){
+						companyTypeGroup = organizationService_.getGroupHandler().createGroupInstance();
+						companyTypeGroup.setGroupName(companyType);
+						companyTypeGroup.setLabel(companyType);
+						companyTypeGroup.setDescription("the " + companyType + " group");
+						organizationService_.getGroupHandler().addChild(null, companyTypeGroup, true);
+					}
+					Group companyGroup = organizationService_.getGroupHandler().createGroupInstance();
+					companyGroup.setGroupName(companyId);
+					companyGroup.setLabel(companyName);
+					companyGroup.setDescription("the " + companyId + " group");
+					organizationService_.getGroupHandler().addChild(companyTypeGroup, companyGroup, true);
 				}
-				Group companyGroup = organizationService_.getGroupHandler().createGroupInstance();
-				companyGroup.setGroupName(companyId);
-			    companyGroup.setLabel(companyName);
-			    companyGroup.setDescription("the " + companyId + " group");
-				organizationService_.getGroupHandler().addChild(companyTypeGroup, companyGroup, true);
 			}
 			
 		} catch (Exception e) {

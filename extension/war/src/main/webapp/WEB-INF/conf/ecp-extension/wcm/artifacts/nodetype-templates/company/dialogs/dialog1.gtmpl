@@ -1,6 +1,7 @@
 <%
   import org.exoplatform.container.PortalContainer;
-  import org.exoplatform.ecp.services.ParameterizedListBoxService;
+  import org.exoplatform.ecp.services.ParameterizedListService;
+  import java.util.List;
   String[] hiddenField1 = ["jcrPath=/node/ecp:logo", "nodetype=nt:resource", "visible=false"] ; 
   String[] hiddenField2 = ["jcrPath=/node/ecp:logo/jcr:encoding", "visible=false", "UTF-8"] ;
   String[] hiddenField3 = ["jcrPath=/node/ecp:logo/jcr:lastModified", "visible=false"] ;
@@ -84,8 +85,20 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.type")%></td>
 	      <td class="FieldComponent">
 		      <%
-		      	ParameterizedListBoxService parameterizedListBoxService = (ParameterizedListBoxService) PortalContainer.getInstance().getComponentInstanceOfType(ParameterizedListBoxService.class);
-		        String[] fieldType = ["jcrPath=/node/ecp:type", "options="+parameterizedListBoxService.getCompanyPaths(), "onchange=false", "validate=empty"] ;
+		      	ParameterizedListService parameterizedListService = (ParameterizedListService) PortalContainer.getInstance().getComponentInstanceOfType(ParameterizedListService.class);
+		        List<String> companyTypes = parameterizedListService.getCompanyTypes();
+		        String typeOptions = "";
+		        if (companyTypes != null && !companyTypes.isEmpty()) {
+		        	typeOptions = companyTypes.get(0);
+		        	int count = 0;
+			        for (String companyType : companyTypes) {
+			        	if (count != 0) {
+			        		typeOptions += "," + companyType;
+			        	}
+			        	count ++;
+			        }
+		        }
+		        String[] fieldType = ["jcrPath=/node/ecp:type", "options="+typeOptions, "onchange=false", "validate=empty"] ;
 		        uicomponent.addSelectBoxField("type", fieldType) ;
 	      	%>
 	      </td>

@@ -4,12 +4,14 @@
                xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd">
 
 	<component>
-		<type>org.exoplatform.ecp.services.ParameterizedListBoxService</type>
+		<type>org.exoplatform.ecp.services.ParameterizedListService</type>
 		<init-params>
-			<value-param>
+			<values-param>
 				<name>companyTypes</name>
-				<value>customer,partners,leads</value>
-			</value-param>
+				<value>customer</value>
+				<value>partners</value>
+				<value>leads</value>
+			</values-param>
 		</init-params>
 	</component>
 
