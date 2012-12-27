@@ -22,8 +22,8 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.name")%></td>
 	      <td class="FieldComponent">
 		      <%
-		        String[] fieldTitle = ["jcrPath=/node/ecp:name", "validate=empty"] ;
-		        uicomponent.addTextField("title", fieldTitle) ;
+		        String[] fieldName = ["jcrPath=/node/ecp:name", "validate=empty"] ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.name").split(":")[0], fieldName) ;
 		      %>
 		    </td>
 	    </tr>
@@ -31,8 +31,8 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.id")%></td>
 	      <td class="FieldComponent">
 		      <%
-		        String[] fieldName = ["jcrPath=/node", "editable=if-null", "validate=empty,name"] ;
-		        uicomponent.addTextField("name", fieldName) ;  
+		        String[] fieldId = ["jcrPath=/node", "editable=if-null", "validate=empty,name"] ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.id").split(":")[0], fieldId) ;  
 		      %>
 		    </td>
 	    </tr>
@@ -41,7 +41,7 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldComponent">
 		      <%
 		        String[] fieldAddress = ["jcrPath=/node/ecp:address", "validate=empty"] ;
-		        uicomponent.addTextAreaField("address", fieldAddress) ;
+		        uicomponent.addTextAreaField(_ctx.appRes("Company.label.address").split(":")[0], fieldAddress) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -50,7 +50,7 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldComponent">
 		      <%
 		        String[] fieldPhone = ["jcrPath=/node/ecp:phone", "validate=empty"] ;
-		        uicomponent.addTextField("phone", fieldPhone) ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.phone").split(":")[0], fieldPhone) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -59,7 +59,7 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldComponent">
 		      <%
 		        String[] fieldCountry = ["jcrPath=/node/ecp:country", "validate=empty"] ;
-		        uicomponent.addTextField("country", fieldCountry) ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.country").split(":")[0], fieldCountry) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -68,7 +68,7 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldComponent">
 		      <%
 		        String[] fieldWebsite = ["jcrPath=/node/ecp:website", "validate=empty"] ;
-		        uicomponent.addTextField("website", fieldWebsite) ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.website").split(":")[0], fieldWebsite) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -76,8 +76,8 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 	      <td class="FieldLabel"><%=_ctx.appRes("Company.label.email")%></td>
 	      <td class="FieldComponent">
 		      <%
-		        String[] fieldEmail = ["jcrPath=/node/ecp:email", "validate=empty"] ;
-		        uicomponent.addTextField("email", fieldEmail) ;
+		        String[] fieldEmail = ["jcrPath=/node/ecp:email", "validate=empty,email"] ;
+		        uicomponent.addTextField(_ctx.appRes("Company.label.email").split(":")[0], fieldEmail) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -99,7 +99,7 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 			        }
 		        }
 		        String[] fieldType = ["jcrPath=/node/ecp:type", "options="+typeOptions, "onchange=false", "validate=empty"] ;
-		        uicomponent.addSelectBoxField("type", fieldType) ;
+		        uicomponent.addSelectBoxField(_ctx.appRes("Company.label.type").split(":")[0], fieldType) ;
 	      	%>
 	      </td>
 	    </tr>
@@ -124,15 +124,15 @@ uicomponent.addInterceptor("ecm-explorer/interceptor/AddToSpecificGroupIntercept
 						<%
 								} else {
 					        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
-					        uicomponent.addUploadField("logo", fieldLogo) ;								
+					        uicomponent.addUploadField(_ctx.appRes("Company.label.logo").split(":")[0], fieldLogo) ;								
 								}
 							}
 						} else if(uicomponent.dataRemoved()) {
 			        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
-			        uicomponent.addUploadField("logo", fieldLogo) ;						
+			        uicomponent.addUploadField(_ctx.appRes("Company.label.logo").split(":")[0], fieldLogo) ;						
 						}	else {
 			        String[] fieldLogo = ["jcrPath=/node/ecp:logo/jcr:data"] ;
-			        uicomponent.addUploadField("logo", fieldLogo) ;
+			        uicomponent.addUploadField(_ctx.appRes("Company.label.logo").split(":")[0], fieldLogo) ;
 						}
 		      %>
 		    </td>

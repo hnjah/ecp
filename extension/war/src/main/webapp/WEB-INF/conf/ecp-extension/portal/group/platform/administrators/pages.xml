@@ -44,7 +44,7 @@
 			</preference>
 			<preference>
 				<name>workspace</name>
-				<value>collaboration</value>
+				<value>ecp</value>
 			</preference>
 			<preference>
 				<name>isRedirect</name>
@@ -52,7 +52,7 @@
 			</preference>
 				<preference>
 				<name>path</name>
-				<value>/sites content/live/ecp/documents</value>
+				<value>/companies</value>
 			</preference>
 			<preference>
 				<name>saveMessage</name>
