@@ -20,28 +20,48 @@
 
 -->
 
-<node-navigation
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2.xsd http://www.gatein.org/xml/ns/gatein_objects_1_2"
-    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
-  <priority>2</priority>
-  
-  <page-nodes>
-    <node>
-      <uri>administration</uri>
-      <name>administration</name>
-      <label>#{administration.title}</label>     
-      <node>
-        <uri>administration/manageCompanyInfo</uri>
-        <name>manageCompanyInfo</name>
-        <label>#{administration.manageCompanyInfo}</label>
-        <node>
-	        <uri>administration/manageCompanyInfo/addNewCompany</uri>
-	        <name>addNewCompany</name>
-	        <label>#{administration.addNewCompany}</label>
-	        <page-reference>group::/platform/administrators::addNewCompany</page-reference>
-      	</node>
-      </node>    
-    </node>                        
-  </page-nodes>
+<node-navigation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_2.xsd http://www.gatein.org/xml/ns/gatein_objects_1_2"
+	xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
+	<priority>2</priority>
+
+	<page-nodes>
+		<node>
+			<uri>administration</uri>
+			<name>administration</name>
+			<label>#{administration.title}</label>
+			<node>
+				<uri>administration/manageCompanyInfo</uri>
+				<name>manageCompanyInfo</name>
+				<label>#{administration.manageCompanyInfo}</label>
+				<node>
+					<uri>administration/manageCompanyInfo/addNewCompany</uri>
+					<name>addNewCompany</name>
+					<label>#{administration.addNewCompany}</label>
+					<page-reference>group::/platform/administrators::addNewCompany</page-reference>
+				</node>
+			</node>
+		</node>
+		<node>
+			<uri>subscription</uri>
+			<name>subscription</name>
+			<label>#{subscription.title}</label>
+			<node>
+				<uri>subscription/productCatalogue</uri>
+				<name>productCatalogue</name>
+				<label>#{subscription.productCatalogue.title}</label>
+				<node>
+					<uri>subscription/productCatalogue/manageCatagory</uri>
+					<name>manageCatagory</name>
+					<label>#{subscription.productCatalogue.manageCatagory.title}</label>
+					<node>
+						<uri>subscription/productCatalogue/manageCatagory/addNewCategory</uri>
+						<name>addNewCategory</name>
+						<label>#{subscription.productCatalogue.manageCatagory.addNewCategory}</label>
+						<page-reference>group::/platform/administrators::addNewCategory</page-reference>
+					</node>
+				</node>
+			</node>
+		</node>
+	</page-nodes>
 </node-navigation>

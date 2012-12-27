@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundle>
+	<Category>
+		<label>
+			<id>Category Name:</id>
+			<label>Fields</label>
+			<text>Please choose which field(s)  will be used in the new category :</text>
+			<product>Product</product>
+			<family>Category Family</family>
+			<sla>Type of SLA</sla>
+			<core>Number of cores</core>
+			<duration>Duration</duration>
+			<partnership>Type of Partnership</partnership>
+			<training>Type of Training</training>
+			<location>Location</location>
+		</label>
+	</Category>
+</bundle>

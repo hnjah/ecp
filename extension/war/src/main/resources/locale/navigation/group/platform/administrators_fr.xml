@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <bundle>
-  <administration>
-      <title>Administration</title>
-      <manageCompanyInfo>Gérer les information de l'entreprise</manageCompanyInfo>
-      <addNewCompany>Ajouter une nouvelle entreprise</addNewCompany>
-  </administration>
+	<administration>
+		<title>Administration</title>
+		<manageCompanyInfo>Gérer les information de l'entreprise</manageCompanyInfo>
+		<addNewCompany>Ajouter une nouvelle entreprise</addNewCompany>
+	</administration>
+	<subscription>
+		<title>Subscription</title>
+		<productCatalogue>
+			<title>Product Catalogue</title>
+			<manageCatagory>
+				<title>Gérer Categories</title>
+				<addNewCategory>Ajouter Categorie</addNewCategory>
+			</manageCatagory>
+		</productCatalogue>
+	</subscription>
 </bundle>

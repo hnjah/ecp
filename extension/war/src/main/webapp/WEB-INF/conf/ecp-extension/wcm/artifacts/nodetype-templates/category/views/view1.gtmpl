@@ -1,0 +1,118 @@
+<%  
+  	def currentNode = uicomponent.getNode() ;
+%>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.id")%></strong>
+				<%
+					print currentNode.getName() ;
+				%>									
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.product")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:product")) {
+						print currentNode.getProperty("ecp:product").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.family")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:family")) {
+						print currentNode.getProperty("ecp:family").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.sla")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:sla")) {
+						print currentNode.getProperty("ecp:sla").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.core")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:core")) {
+						print currentNode.getProperty("ecp:core").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.duration")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:duration")) {
+						print currentNode.getProperty("ecp:duration").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.partnership")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:partnership")) {
+						print currentNode.getProperty("ecp:partnership").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.training")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:training")) {
+						print currentNode.getProperty("ecp:training").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.location")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:location")) {
+						print currentNode.getProperty("ecp:location").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>

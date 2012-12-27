@@ -51,6 +51,7 @@
 					<value>locale.navigation.group.organization.employees</value>
 					<value>locale.navigation.group.organization.companyManagers</value>
 					<value>locale.nodetypes.company</value>
+					<value>locale.nodetypes.category</value>
 				</values-param>
 				<values-param>
 					<name>portal.resource.names</name>
@@ -67,6 +68,7 @@
 					<value>locale.navigation.group.organization.employees</value>
 					<value>locale.navigation.group.organization.companyManagers</value>
 					<value>locale.nodetypes.company</value>
+					<value>locale.nodetypes.category</value>
 				</values-param>
 			</init-params>
 		</component-plugin>

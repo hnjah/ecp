@@ -1,0 +1,105 @@
+<div class="UIForm LayoutContent">
+	<% uiform.begin() %>
+	<div class="HorizontalLayout">
+		<table class="UIFormGrid">
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.id")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldId = ["jcrPath=/node", "editable=if-null", "validate=empty,name"] ;
+					uicomponent.addTextField("id", fieldId) ;
+				  %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><%=_ctx.appRes("Category.label.field")%></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%=_ctx.appRes("Category.label.text")%></td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.product")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldProduct = ["jcrPath=/node/ecp:product", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("product", fieldProduct) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.family")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldFamily = ["jcrPath=/node/ecp:family", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("family", fieldFamily) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.sla")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldSla = ["jcrPath=/node/ecp:sla", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("sla", fieldSla) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.core")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldCore = ["jcrPath=/node/ecp:core", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("core", fieldCore) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.duration")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldDuration = ["jcrPath=/node/ecp:duration", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("duration", fieldDuration) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.partnership")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldPartnership = ["jcrPath=/node/ecp:partnership", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("partnership", fieldPartnership) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.training")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldTraining = ["jcrPath=/node/ecp:training", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("training", fieldTraining) ;  
+				  %>
+				</td>
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.location")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldLocation = ["jcrPath=/node/ecp:location", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("location", fieldLocation) ;  
+				  %>
+				</td>
+			</tr>   
+		</table>
+		<%/* start render action*/%>
+		<div class="UIAction"> 
+			<% for(action in uicomponent.getActions()) {
+					String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
+					String link = uicomponent.event(action);
+			%>
+				<a onclick="$link" class="ActionButton LightBlueStyle" href="javascript:void(0);">$actionLabel</a>
+			<%}%>          
+	    </div>
+	  <%/* end render action*/%>
+	</div>
+	<% uiform.end() %>
+</div>

@@ -1,47 +1,129 @@
-<nodeTypes xmlns:nt="http://www.jcp.org/jcr/nt/1.5" xmlns:mix="http://www.jcp.org/jcr/mix/1.5"
-           xmlns:jcr="http://www.jcp.org/jcr/1.5">
-      
-    <nodeType name="ecp:company" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
-        <supertypes>
-            <supertype>nt:base</supertype>
-        </supertypes>
-        <propertyDefinitions>
-            <propertyDefinition name="ecp:name" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:address" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:website" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:phone" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:country" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:email" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-            <propertyDefinition name="ecp:type" requiredType="String" autoCreated="false" mandatory="true"
-                                onParentVersion="COPY" protected="false" multiple="false">
-                <valueConstraints/>
-            </propertyDefinition>
-        </propertyDefinitions>
-        <childNodeDefinitions>
-	      <childNodeDefinition name="ecp:logo" defaultPrimaryType="nt:resource" autoCreated="false" mandatory="false"
-	        onParentVersion="VERSION" protected="false" sameNameSiblings="true">
-	        <requiredPrimaryTypes>
-	          <requiredPrimaryType>nt:resource</requiredPrimaryType>
-	        </requiredPrimaryTypes>
-	      </childNodeDefinition>
-    	</childNodeDefinitions>
-    </nodeType>
+<nodeTypes xmlns:nt="http://www.jcp.org/jcr/nt/1.5" xmlns:mix="http://www.jcp.org/jcr/mix/1.5" xmlns:jcr="http://www.jcp.org/jcr/1.5">
+
+	<nodeType name="ecp:company" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+		<supertypes>
+			<supertype>nt:base</supertype>
+		</supertypes>
+		<propertyDefinitions>
+			<propertyDefinition name="ecp:name" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:address" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:website" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:phone" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:country" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:email" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:type" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+		</propertyDefinitions>
+		<childNodeDefinitions>
+			<childNodeDefinition name="ecp:logo" defaultPrimaryType="nt:resource" autoCreated="false"
+				mandatory="false" onParentVersion="VERSION" protected="false" sameNameSiblings="true">
+				<requiredPrimaryTypes>
+					<requiredPrimaryType>nt:resource</requiredPrimaryType>
+				</requiredPrimaryTypes>
+			</childNodeDefinition>
+		</childNodeDefinitions>
+	</nodeType>
+
+	<nodeType name="ecp:subscriptionType" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+		<supertypes>
+			<supertype>nt:base</supertype>
+		</supertypes>
+		<propertyDefinitions>
+			<propertyDefinition name="ecp:name" requiredType="String" autoCreated="false" mandatory="true"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:product" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:family" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:sla" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:core" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:duration" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:partnership" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:training" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:location" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+		</propertyDefinitions>
+	</nodeType>
+	<nodeType name="ecp:category" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
+		<supertypes>
+			<supertype>nt:base</supertype>
+		</supertypes>
+		<propertyDefinitions>
+			<propertyDefinition name="ecp:product" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:family" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:sla" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:core" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:duration" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:partnership" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:training" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:location" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+		</propertyDefinitions>
+	</nodeType>
 </nodeTypes>
