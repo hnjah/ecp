@@ -1,0 +1,5 @@
+<%
+          for(uiChild in uicomponent.getChildren()) {
+            uicomponent.renderChild(uiChild) ;
+          }
+%>

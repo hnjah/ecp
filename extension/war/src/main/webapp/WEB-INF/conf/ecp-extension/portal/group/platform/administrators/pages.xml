@@ -77,6 +77,23 @@
 		</portlet-application>
 	</page>
 	<page>
+		<name>updateCompanyInfo</name>
+		<title>updateCompanyInfo</title>
+		<access-permissions>manager:/platform/administrators</access-permissions>
+		<edit-permission>manager:/platform/administrators</edit-permission>
+		<portlet-application>
+			<portlet>
+				<application-ref>ecp-portlets</application-ref>
+				<portlet-ref>updateCompanyInfoPortlet</portlet-ref>
+			</portlet>
+			<title>Update company info</title>
+			<access-permissions>manager:/platform/administrators</access-permissions>
+			<show-info-bar>false</show-info-bar>
+			<show-application-state>false</show-application-state>
+			<show-application-mode>false</show-application-mode>
+		</portlet-application>
+	</page>
+	<page>
 		<name>addNewCategory</name>
 		<title>addNewCategory</title>
 		<access-permissions>manager:/platform/administrators</access-permissions>

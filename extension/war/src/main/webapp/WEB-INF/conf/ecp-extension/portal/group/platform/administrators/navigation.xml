@@ -40,6 +40,12 @@
 					<label>#{administration.addNewCompany}</label>
 					<page-reference>group::/platform/administrators::addNewCompany</page-reference>
 				</node>
+				<node>
+					<uri>administration/manageCompanyInfo/updateCompanyInfo</uri>
+					<name>updateCompanyInfo</name>
+					<label>#{administration.updateCompanyInfo}</label>
+					<page-reference>group::/platform/administrators::updateCompanyInfo</page-reference>
+				</node>
 			</node>
 		</node>
 		<node>
