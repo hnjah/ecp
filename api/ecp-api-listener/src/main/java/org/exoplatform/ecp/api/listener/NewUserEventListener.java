@@ -55,7 +55,9 @@ public class NewUserEventListener extends UserEventListener {
 				body.append("<table border='0' cellpadding='0' cellspacing='0' width='92%' bgcolor='#fff' align='center' style='font-size:12px;color:#666666;line-height:20px;font-family:verdana,arial,tahoma'>");
 				body.append("<tbody><tr>");
 				body.append("<td>");
-				body.append("<p style='font-family:verdana,arial,tahoma;font-size:12px;margin-top:20px'>Hi Zyed,</p>");
+				body.append("<p style='font-family:verdana,arial,tahoma;font-size:12px;margin-top:20px'>Hi ");
+				body.append(user.getFullName());
+				body.append(",</p>");
 				body.append("<p style='font-family:verdana,arial,tahoma;font-size:12px'><span class='il'>Welcome</span> to <strong>eXoplatform</strong> Customer Portal ! <br> Your username is <strong>");
 				body.append(user.getUserName());
 				body.append("</strong>, your passeword is <strong>");
@@ -78,7 +80,7 @@ public class NewUserEventListener extends UserEventListener {
 				body.append("<div style='font-family:verdana,arial,tahoma;font-size:12px'><span class='il'>eXo</span> <span class='il'>Customer Portal</span> enables subscription customers, Partners or leads to access everything provided with their subscription from one convenient location. Anyone can access the eXo Customer Portal. However, some content is available exclusively to eXo customers with active subscriptions.<br> <a href='http://vimeo.com/33936181?autoplay=1' style='font-family:Verdana,arial,tahoma,serif;color:#fff;font-size:12px;text-decoration:underline' title='Watch Video' target='_blank'> Watch Video</a></div>");						
 				body.append("</td>");
 				body.append("<td align='right' width='270'>");
-				body.append("<a href='http://vimeo.com/33936181?autoplay=1' title='Watch Video eXo Customer Portal' target='_blank'><img alt='eXo Customer Portal'></a>");
+				body.append("<iframe src='http://player.vimeo.com/video/33936181' width='250' height='125' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href='http://vimeo.com/33936181'>Cloud-Workspaces Overview</a> from <a href='http://vimeo.com/user3456521'>eXo</a> on <a href='http://vimeo.com'>Vimeo</a>.</p>");
 				body.append("</td>");
 				body.append("</tr>");
 				body.append("</tbody></table>");
