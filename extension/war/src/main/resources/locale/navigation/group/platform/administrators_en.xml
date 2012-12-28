@@ -5,6 +5,11 @@
 		<manageCompanyInfo>Manage company info</manageCompanyInfo>
 		<addNewCompany>Add new company</addNewCompany>
 	</administration>
+	<administration>
+		<title>Administration</title>
+		<manageCompanyInfo>Manage company info</manageCompanyInfo>
+		<addNewCompany>Add new company</addNewCompany>
+	</administration>
 	<subscription>
 		<title>Subscription</title>
 		<productCatalogue>
