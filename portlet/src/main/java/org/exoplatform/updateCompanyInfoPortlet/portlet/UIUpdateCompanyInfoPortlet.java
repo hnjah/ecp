@@ -30,20 +30,24 @@ import org.exoplatform.webui.form.UIFormStringInput;
 @ComponentConfig(lifecycle = UIApplicationLifecycle.class, template = "/groovy/ecp-portlets/portlet/updateCompanyInfoPortlet/UIUpdateCompanyInfoPortlet.gtmpl", events = @EventConfig(listeners = UIUpdateCompanyInfoPortlet.EditCompanyActionListener.class))
 public class UIUpdateCompanyInfoPortlet extends UIPortletApplication {
 
-	public static final String COMPANY_NAME = "name";
+	private static final String COMPANY_NAME = "name";
 	
-	public static final String COUNTRY = "country";
+	private static final String COUNTRY = "country";
 
-	public static final String TYPE = "type";
+	private static final String TYPE = "type";
 	
 	private static final String[] COMPANY_BEAN_FIELD = {COMPANY_NAME, COUNTRY, TYPE};
 
 	private static final String[] COMPANY_ACTION = {"EditCompany"};
 	
-	UIGrid grid_;
+	private UIGrid grid_;
 
 	@SuppressWarnings("unchecked")
 	private final static List<SelectItemOption<String>> OPTIONS_ = Collections.unmodifiableList(Arrays.asList(new SelectItemOption<String>(COMPANY_NAME, COMPANY_NAME), new SelectItemOption<String>(COUNTRY, COUNTRY), new SelectItemOption<String>(TYPE, TYPE)));
+	
+	private QueryManager queryManager;
+	
+	private StringBuilder queryString = new StringBuilder("select * from ecp:company where jcr:path like '/companies/%'");
 
 	public UIUpdateCompanyInfoPortlet() throws Exception {
 		UISearchForm uiForm = addChild(UISearchForm.class, null, null);
@@ -52,22 +56,23 @@ public class UIUpdateCompanyInfoPortlet extends UIPortletApplication {
 	    grid_.configure(COMPANY_NAME, COMPANY_BEAN_FIELD, COMPANY_ACTION);
 	    grid_.getUIPageIterator().setId("UIListCompaniesIterator");
 	    grid_.getUIPageIterator().setParent(this);
+		ExoContainer exoContainer = ExoContainerContext.getCurrentContainer();
+        RepositoryService rs = (RepositoryService) exoContainer.getComponentInstanceOfType(RepositoryService.class);
+        Session session = (Session) rs.getCurrentRepository().getSystemSession("ecp");
+        queryManager = session.getWorkspace().getQueryManager();
+		Query query = queryManager.createQuery(queryString.toString(), Query.SQL);
+	    search(query);
 	}
 	
 	public void quickSearch(UIFormInputSet quickSearchInput) throws Exception {
 		UIFormStringInput input = (UIFormStringInput)quickSearchInput.getChild(0);
 	    UIFormSelectBox select = (UIFormSelectBox)quickSearchInput.getChild(1);
-		ExoContainer exoContainer = ExoContainerContext.getCurrentContainer();
-        RepositoryService rs = (RepositoryService) exoContainer.getComponentInstanceOfType(RepositoryService.class);
-        Session session = (Session) rs.getCurrentRepository().getSystemSession("ecp");
-        QueryManager queryManager = null;
-        queryManager = session.getWorkspace().getQueryManager();
-        StringBuilder queryString = new StringBuilder("select * from ecp:company where jcr:path like '/companies/%'");
         if (input.getValue() != null) {
         	queryString.append (" and " + "ecp:" + select.getValue() + " like '" + input.getValue() + "%'");
         }
 		Query query = queryManager.createQuery(queryString.toString(), Query.SQL);
 	    search(query);
+	    queryString = new StringBuilder("select * from ecp:company where jcr:path like '/companies/%'");
 	}
 	
 	private void search(Query query) throws Exception {

@@ -6,9 +6,10 @@
     width: 16px;
 }
   </style>
-
+<div id="$uicomponent.id">
 <%
           for(uiChild in uicomponent.getChildren()) {
             uicomponent.renderChild(uiChild) ;
           }
 %>
+</div>
