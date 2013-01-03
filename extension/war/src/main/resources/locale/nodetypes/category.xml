@@ -13,6 +13,7 @@
 			<partnership>Type of Partnership</partnership>
 			<training>Type of Training</training>
 			<location>Location</location>
+			<consultingDuration>Consulting Duration</consultingDuration>
 		</label>
 	</Category>
 </bundle>

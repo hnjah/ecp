@@ -16,6 +16,7 @@ public class ParameterizedListService {
 	private List<String> partnership;
 	private List<String> training;
 	private List<String> location;
+	private List<String> consultingDuration;
 	
 	@SuppressWarnings("unchecked")
 	public ParameterizedListService(InitParams params){
@@ -29,6 +30,7 @@ public class ParameterizedListService {
 		partnership = params.getValuesParam("partnership").getValues();
 		training = params.getValuesParam("training").getValues();
 		location = params.getValuesParam("location").getValues();
+		consultingDuration = params.getValuesParam("consultingDuration").getValues();
 		
 	}
 
@@ -70,6 +72,10 @@ public class ParameterizedListService {
 
 	public List<String> getLocation() {
 		return location;
+	}
+
+	public List<String> getConsultingDuration() {
+		return consultingDuration;
 	}
 
 }

@@ -1,0 +1,20 @@
+<%
+	import org.exoplatform.ecp.portlet.subscriptionType.UILeftSide;
+	import org.exoplatform.ecp.portlet.subscriptionType.UIAddSubscriptionType;
+%>
+<div id="$uicomponent.id">
+	<table class="ActionContainer">
+		<tr>
+			<td>
+			<%
+				uicomponent.renderChild(UILeftSide.class);
+			%>
+			</td>
+			<td>
+			<%
+				uicomponent.renderChild(1);
+			%>
+			</td>
+		</tr>
+	</table>
+</div>

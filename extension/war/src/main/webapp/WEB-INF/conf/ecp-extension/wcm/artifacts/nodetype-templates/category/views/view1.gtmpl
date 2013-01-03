@@ -116,3 +116,16 @@
 		</div>
 	</div>
 	<br/>
+	<div class="FieldContent">
+		<div class="FieldContainerContent">
+			<div class="LabelContent">
+				<strong><%=_ctx.appRes("Category.label.consultingDuration")%></strong>
+				<%
+					if(currentNode.hasProperty("ecp:consultingDuration")) {
+						print currentNode.getProperty("ecp:consultingDuration").getBoolean() ;
+					}
+				%>								
+			</div>
+		</div>
+	</div>
+	<br/>

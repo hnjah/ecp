@@ -4,19 +4,16 @@
 
 	<parent>
 		<groupId>org.exoplatform.ecp</groupId>
-		<artifactId>ecp-parent</artifactId>
+		<artifactId>ecp-api</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ecp-api</artifactId>
+	<artifactId>ecp-api-model</artifactId>
 
-	<name>ECP Api</name>
-	<packaging>pom</packaging>
-	<description>ECP Api</description>
+	<name>ECP Api model</name>
+	<packaging>jar</packaging>
+	<description>ECP Api model</description>
 
-	<modules>
-		<module>ecp-api-model</module>
-		<module>ecp-api-listener</module>
-		<module>ecp-api-service</module>
-	</modules>
+	<dependencies>
+	</dependencies>
 </project>

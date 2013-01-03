@@ -85,6 +85,14 @@
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
+			<propertyDefinition name="ecp:consultingDuration" requiredType="String" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
+			<propertyDefinition name="ecp:activate" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
 		</propertyDefinitions>
 	</nodeType>
 	<nodeType name="ecp:category" isMixin="false" hasOrderableChildNodes="false" primaryItemName="">
@@ -124,6 +132,18 @@
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
+			<propertyDefinition name="ecp:consultingDuration" requiredType="Boolean" autoCreated="false" mandatory="false"
+				onParentVersion="COPY" protected="false" multiple="false">
+				<valueConstraints />
+			</propertyDefinition>
 		</propertyDefinitions>
+		<childNodeDefinitions>
+			<childNodeDefinition name="ecp:subscriptionType" defaultPrimaryType="ecp:subscriptionType" autoCreated="false"
+				mandatory="false" onParentVersion="VERSION" protected="false" sameNameSiblings="true">
+				<requiredPrimaryTypes>
+					<requiredPrimaryType>ecp:subscriptionType</requiredPrimaryType>
+				</requiredPrimaryTypes>
+			</childNodeDefinition>
+		</childNodeDefinitions>
 	</nodeType>
 </nodeTypes>

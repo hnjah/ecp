@@ -41,4 +41,6 @@
 	<import>war:/conf/ecp-extension/jcr/jcr-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/cms-configuration.xml</import>
 	<import>war:/conf/ecp-extension/wcm/drives-configuration.xml</import>
+	
+	<import>war:/conf/ecp-extension/services-configuration.xml</import>
 </configuration>

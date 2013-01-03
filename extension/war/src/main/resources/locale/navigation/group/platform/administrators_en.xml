@@ -19,6 +19,9 @@
 				<title>Manage Category</title>
 				<addNewCategory>Add New Category</addNewCategory>
 			</manageCatagory>
+			<manageSubscriptionType>
+				<title>Manage Subscription-Type</title>
+			</manageSubscriptionType>
 		</productCatalogue>
 	</subscription>
 </bundle>

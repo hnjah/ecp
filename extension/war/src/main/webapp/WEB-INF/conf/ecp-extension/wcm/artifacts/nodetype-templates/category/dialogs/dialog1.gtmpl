@@ -88,7 +88,16 @@
 					uicomponent.addCheckBoxField("location", fieldLocation) ;  
 				  %>
 				</td>
-			</tr>   
+			</tr>
+			<tr>		          					
+				<td class="FieldLabel"><%=_ctx.appRes("Category.label.consultingDuration")%></td>
+				<td class="FieldComponent">
+				  <%
+					String[] fieldConsultingDuration = ["jcrPath=/node/ecp:consultingDuration", "defaultValues=false"] ;
+					uicomponent.addCheckBoxField("consultingDuration", fieldConsultingDuration) ;  
+				  %>
+				</td>
+			</tr>
 		</table>
 		<%/* start render action*/%>
 		<div class="UIAction"> 

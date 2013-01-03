@@ -145,4 +145,21 @@
 			<show-application-mode>false</show-application-mode>
 		</portlet-application>
 	</page>
+	<page>
+		<name>manageSubscriptionType</name>
+		<title>manageSubscriptionType</title>
+		<access-permissions>manager:/platform/administrators</access-permissions>
+		<edit-permission>manager:/platform/administrators</edit-permission>
+		<portlet-application>
+			<portlet>
+				<application-ref>ecp-portlets</application-ref>
+				<portlet-ref>manageSubscriptionTypePortlet</portlet-ref>
+			</portlet>
+			<title>Manage Subscription-Type</title>
+			<access-permissions>manager:/platform/administrators</access-permissions>
+			<show-info-bar>false</show-info-bar>
+			<show-application-state>false</show-application-state>
+			<show-application-mode>false</show-application-mode>
+		</portlet-application>
+	</page>
 </page-set>

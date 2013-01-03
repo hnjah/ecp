@@ -73,6 +73,14 @@
 				<value>Public</value>
 				<value>On site</value>
 			</values-param>
+			<values-param>
+				<name>consultingDuration</name>
+				<value>Consulting Credit 5 days</value>
+				<value>Consulting Credit 10 days</value>
+				<value>Consulting Credit 20 days</value>
+				<value>Consulting Credit 30 days</value>
+				<value>Consulting Credit 50 days</value>
+			</values-param>
 		</init-params>
 	</component>
 

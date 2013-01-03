@@ -14,6 +14,9 @@
 				<title>Gérer Categories</title>
 				<addNewCategory>Ajouter Categorie</addNewCategory>
 			</manageCatagory>
+			<manageSubscriptionType>
+				<title>Gérer Subscription-Type</title>
+			</manageSubscriptionType>
 		</productCatalogue>
 	</subscription>
 </bundle>

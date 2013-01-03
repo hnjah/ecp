@@ -67,6 +67,12 @@
 						<page-reference>group::/platform/administrators::addNewCategory</page-reference>
 					</node>
 				</node>
+				<node>
+					<uri>subscription/productCatalogue/manageSubscriptionType</uri>
+					<name>manageSubscriptionType</name>
+					<label>#{subscription.productCatalogue.manageSubscriptionType.title}</label>
+					<page-reference>group::/platform/administrators::manageSubscriptionType</page-reference>
+				</node>
 			</node>
 		</node>
 	</page-nodes>

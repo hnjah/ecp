@@ -94,13 +94,13 @@
 															<string>true</string>
 														</field>
 														<field name="addNode">
-															<string>false</string>
+															<string>true</string>
 														</field>
 														<field name="setProperty">
-															<string>false</string>
+															<string>true</string>
 														</field>
 														<field name="remove">
-															<string>false</string>
+															<string>true</string>
 														</field>
 													</object>
 												</value>
@@ -116,7 +116,7 @@
 															<string>false</string>
 														</field>
 														<field name="setProperty">
-															<string>false</string>
+															<string>true</string>
 														</field>
 														<field name="remove">
 															<string>false</string>

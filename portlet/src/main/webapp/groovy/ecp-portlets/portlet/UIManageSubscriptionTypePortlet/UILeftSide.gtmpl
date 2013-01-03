@@ -1,0 +1,24 @@
+<div id="$uicomponent.id">
+	<table class="ActionContainer">
+		<tr>
+			<td>
+				<%
+					String action = "Add";
+					String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
+					String link = uicomponent.event(action);
+				%>
+				<a href="$link">$actionLabel</a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%
+					action = "Desactivate";
+					actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
+					link = uicomponent.event(action);
+				%>
+				<a href="$link">$actionLabel</a>
+			</td>
+		</tr>
+	</table>
+</div>
