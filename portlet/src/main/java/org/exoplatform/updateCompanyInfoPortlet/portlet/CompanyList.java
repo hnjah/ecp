@@ -27,7 +27,7 @@ public class CompanyList extends PageListAccess<Company, Query>
 		   List<Company> listCompanies = new ArrayList<Company>();
 		   while(nodeIterator.hasNext()){
 			   Node companyNode = nodeIterator.nextNode();
-               Company comapany = new Company(companyNode.getProperty("ecp:name").getString(), companyNode.getProperty("ecp:country").getString(), companyNode.getProperty("ecp:type").getString()); 
+               Company comapany = new Company(companyNode.getProperty("exo:name").getString(), companyNode.getProperty("ecp:name").getString(), companyNode.getProperty("ecp:country").getString(), companyNode.getProperty("ecp:type").getString()); 
                listCompanies.add(comapany);
            }    
 		   return new ListAccessImpl<Company>(Company.class, listCompanies);
