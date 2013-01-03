@@ -1,5 +1,15 @@
+<style type="text/css">
+.UIGrid .EditCompanyIcon {
+    background: url("/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/EditIcon.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+  </style>
+<div id="$uicomponent.id">
 <%
           for(uiChild in uicomponent.getChildren()) {
             uicomponent.renderChild(uiChild) ;
           }
 %>
+</div>
