@@ -1,6 +1,15 @@
-package org.exoplatform.updateCompanyInfoPortlet.portlet;
+package org.exoplatform.ecp.model;
 
 public class Company {
+	
+	public static String NAME = "ecp:name";
+	public static String ADDRESS = "ecp:address";
+	public static String WEBSITE = "ecp:website";
+	public static String PHONE = "ecp:phone";
+	public static String COUNTRY = "ecp:country";
+	public static String EMAIL = "ecp:email";
+	public static String TYPE = "ecp:type";
+	public static String LOGO = "ecp:logo";
 
 	private String id;
 	

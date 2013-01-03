@@ -1,16 +1,15 @@
 package org.exoplatform.updateCompanyInfoPortlet.portlet;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.query.Query;
-import javax.jcr.query.QueryResult;
 
 import org.exoplatform.commons.utils.ListAccess;
 import org.exoplatform.commons.utils.ListAccessImpl;
 import org.exoplatform.commons.utils.PageListAccess;
+import org.exoplatform.container.PortalContainer;
+import org.exoplatform.ecp.model.Company;
+import org.exoplatform.ecp.services.manager.ManageCompany;
 
 public class CompanyList extends PageListAccess<Company, Query>
 {
@@ -22,14 +21,9 @@ public class CompanyList extends PageListAccess<Company, Query>
 
 	   @Override
 	   protected ListAccess<Company> create(Query state) throws Exception {
-		   QueryResult result = state.execute();
-		   NodeIterator nodeIterator = result.getNodes();
-		   List<Company> listCompanies = new ArrayList<Company>();
-		   while(nodeIterator.hasNext()){
-			   Node companyNode = nodeIterator.nextNode();
-               Company comapany = new Company(companyNode.getProperty("exo:name").getString(), companyNode.getProperty("ecp:name").getString(), companyNode.getProperty("ecp:country").getString(), companyNode.getProperty("ecp:type").getString()); 
-               listCompanies.add(comapany);
-           }    
-		   return new ListAccessImpl<Company>(Company.class, listCompanies);
+		   PortalContainer portalContainer = PortalContainer.getInstance();
+		   ManageCompany manageCompany = (ManageCompany)portalContainer.getComponentInstanceOfType(ManageCompany.class);
+		   List<Company> companies = manageCompany.getAllCompanies(state);
+		   return new ListAccessImpl<Company>(Company.class, companies);
 	   }
 	}

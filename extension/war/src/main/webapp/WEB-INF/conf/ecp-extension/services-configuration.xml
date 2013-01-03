@@ -4,6 +4,90 @@
 	xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
 
 	<component>
+		<type>org.exoplatform.ecp.services.ParameterizedListService</type>
+		<init-params>
+			<values-param>
+				<name>companyTypes</name>
+				<value>customer</value>
+				<value>partners</value>
+				<value>leads</value>
+			</values-param>
+			<values-param>
+				<name>category.properties</name>
+				<value>product</value>
+				<value>family</value>
+				<value>sla</value>
+				<value>core</value>
+				<value>duration</value>
+				<value>partnership</value>
+				<value>training</value>
+				<value>location</value>
+			</values-param>
+			<values-param>
+				<name>product</name>
+				<value>eXo Platform 3.5</value>
+				<value>eXo Platform For Jboss</value>
+			</values-param>
+			<values-param>
+				<name>family</name>
+				<value>Express</value>
+				<value>Entreprise</value>
+				<value>UXPaaS</value>
+				<value>DEVELOPER</value>
+				<value>Quick Start Program</value>
+			</values-param>
+			<values-param>
+				<name>sla</name>
+				<value>Premium</value>
+				<value>Standard</value>
+				<value>Advanced</value>
+			</values-param>
+			<values-param>
+				<name>core</name>
+				<value>8 Cores</value>
+				<value>16 Cores</value>
+				<value>64 Cores</value>
+			</values-param>
+			<values-param>
+				<name>duration</name>
+				<value>1 Y</value>
+				<value>3 Y</value>
+			</values-param>
+			<values-param>
+				<name>partnership</name>
+				<value>Partnership-Silver</value>
+				<value>Partnership-Gold</value>
+				<value>Partnership-Platinum</value>
+				<value>Partnership-Authorized</value>
+				<value>Partnership-Premier</value>
+			</values-param>
+			<values-param>
+				<name>training</name>
+				<value>eXo Fundamentals</value>
+				<value>eXo Developer</value>
+				<value>eXo Administrator</value>
+			</values-param>
+			<values-param>
+				<name>location</name>
+				<value>Public</value>
+				<value>On site</value>
+			</values-param>
+			<values-param>
+				<name>consultingDuration</name>
+				<value>Consulting Credit 5 days</value>
+				<value>Consulting Credit 10 days</value>
+				<value>Consulting Credit 20 days</value>
+				<value>Consulting Credit 30 days</value>
+				<value>Consulting Credit 50 days</value>
+			</values-param>
+		</init-params>
+	</component>
+	
+	<component>
 		<type>org.exoplatform.ecp.services.manager.ManageCategory</type>
+	</component>
+	
+	<component>
+		<type>org.exoplatform.ecp.services.manager.ManageCompany</type>
 	</component>
 </configuration>
