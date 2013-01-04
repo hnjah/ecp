@@ -32,10 +32,10 @@
 				<name>manageUsers</name>
 				<label>#{administration.manageUsers}</label>
 				<node>
-					<uri>administration/manageUsers/activateUsers</uri>
-					<name>activateUsers</name>
-					<label>#{administration.activateUsers}</label>
-					<page-reference>group::/platform/administrators::activateUsers</page-reference>
+					<uri>administration/manageUsers/activateDesactivateUsers</uri>
+					<name>activateDesactivateUsers</name>
+					<label>#{administration.activateDesactivateUsers}</label>
+					<page-reference>group::/platform/administrators::activateDesactivateUsers</page-reference>
 				</node>
 			</node>
 		</node>

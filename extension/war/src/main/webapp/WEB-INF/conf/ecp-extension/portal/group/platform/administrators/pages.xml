@@ -143,8 +143,8 @@
 		</portlet-application>
 	</page>
 	<page>
-		<name>activateUsers</name>
-		<title>activateUsers</title>
+		<name>activateDesactivateUsers</name>
+		<title>activateDesactivateUsers</title>
 		<access-permissions>manager:/platform/administrators</access-permissions>
 		<edit-permission>manager:/platform/administrators</edit-permission>
 		<portlet-application>
@@ -152,7 +152,7 @@
 				<application-ref>ecp-portlets</application-ref>
 				<portlet-ref>activateUsersPortlet</portlet-ref>
 			</portlet>
-			<title>Activate users</title>
+			<title>Activate Desactivate users</title>
 			<access-permissions>manager:/platform/administrators</access-permissions>
 			<show-info-bar>false</show-info-bar>
 			<show-application-state>false</show-application-state>

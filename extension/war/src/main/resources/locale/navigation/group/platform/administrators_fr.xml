@@ -6,7 +6,7 @@
 		<addNewCompany>Ajouter une nouvelle entreprise</addNewCompany>
 		<updateCompanyInfo>Mettre à jour les informations d'une entreprise</updateCompanyInfo>
 		<manageUsers>Gérer les utilisateurs</manageUsers>
-		<activateUsers>Activer les utilisateurs</activateUsers>
+		<activateDesactivateUsers>Activer/Désactiver les utilisateurs</activateDesactivateUsers>
 	</administration>
 	<subscription>
 		<title>Subscription</title>
