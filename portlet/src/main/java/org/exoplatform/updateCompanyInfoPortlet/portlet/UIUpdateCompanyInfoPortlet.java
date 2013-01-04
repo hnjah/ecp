@@ -35,15 +35,24 @@ public class UIUpdateCompanyInfoPortlet extends UIPortletApplication {
 
 	private static final String[] COMPANY_ACTION = {"EditCompany"};
 	
-	public static String COMPANY_PATH = "/companies";
+	private static final String COMPANY_PATH = "/companies";
 	
-	public static String COMPANY_NODETYPE = "ecp:company";
+	private static final String COMPANY_NODETYPE = "ecp:company";
 	
 	private UIGrid grid_;
 
 	private ManageCompany manageCompany;
 	
 	private StringBuilder queryString;
+	
+	private void search(Query query) throws Exception {
+		grid_.getUIPageIterator().setPageList(new CompanyList(query, 10));
+	    UIPageIterator pageIterator = grid_.getUIPageIterator();
+	    if (pageIterator.getAvailable() == 0) {
+	    	UIApplication uiApp = Util.getPortalRequestContext().getUIApplication();
+	        uiApp.addMessage(new ApplicationMessage("UISearchForm.msg.empty", null));
+	    }
+	}
 
 	@SuppressWarnings("unchecked")
 	public UIUpdateCompanyInfoPortlet() throws Exception {
@@ -72,14 +81,5 @@ public class UIUpdateCompanyInfoPortlet extends UIPortletApplication {
 	    search(query);
 	    manageCompany.getSession().logout();
 	    queryString = new StringBuilder("select * from " + COMPANY_NODETYPE + " where jcr:path like '" + COMPANY_PATH + "/%'");
-	}
-	
-	private void search(Query query) throws Exception {
-		grid_.getUIPageIterator().setPageList(new CompanyList(query, 10));
-	    UIPageIterator pageIterator = grid_.getUIPageIterator();
-	    if (pageIterator.getAvailable() == 0) {
-	    	UIApplication uiApp = Util.getPortalRequestContext().getUIApplication();
-	        uiApp.addMessage(new ApplicationMessage("UISearchForm.msg.empty", null));
-	    }
 	}
 }

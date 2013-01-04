@@ -1,0 +1,21 @@
+<style type="text/css">
+.UIGrid .ActivateUserIcon {
+    background: url("/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/GreenCheckerIcon.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+.UIGrid .DesactivateUserIcon {
+    background: url("/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/RedCrossCircle.gif") no-repeat scroll 0 0 transparent;
+    height: 16px;
+    margin: auto;
+    width: 16px;
+}
+  </style>
+<div id="$uicomponent.id">
+<%
+          for(uiChild in uicomponent.getChildren()) {
+            uicomponent.renderChild(uiChild) ;
+          }
+%>
+</div>

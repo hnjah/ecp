@@ -5,11 +5,8 @@
 		<manageCompanyInfo>Manage company info</manageCompanyInfo>
 		<addNewCompany>Add new company</addNewCompany>
 		<updateCompanyInfo>Update company informations</updateCompanyInfo>
-	</administration>
-	<administration>
-		<title>Administration</title>
-		<manageCompanyInfo>Manage company info</manageCompanyInfo>
-		<addNewCompany>Add new company</addNewCompany>
+		<manageUsers>Manage users</manageUsers>
+		<activateUsers>Activate users</activateUsers>
 	</administration>
 	<subscription>
 		<title>Subscription</title>

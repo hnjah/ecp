@@ -27,6 +27,29 @@
 	</portlet>
 	
 	<portlet>
+		<description xml:lang="EN">Activate Users Portlet</description>
+		<portlet-name>activateUsersPortlet</portlet-name>
+		<display-name xml:lang="EN">activateUsersPortlet</display-name>
+		<portlet-class>org.exoplatform.webui.application.portlet.PortletApplicationController</portlet-class>
+		<init-param>
+			<name>webui.configuration</name>
+			<!-- must match the path to configuration file -->
+			<value>/WEB-INF/conf/portlet/activateUsersPortlet/configuration.xml</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>help</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>locale.portlet.activateUsersPortlet.activateUsersPortlet</resource-bundle>
+		<portlet-info>
+			<title>activateUsersPortlet</title>
+			<short-title>activateUsersPortlet</short-title>
+		</portlet-info>
+	</portlet>
+	
+	<portlet>
 		<description xml:lang="EN">Manage Subscription-Type Portlet</description>
 		<portlet-name>manageSubscriptionTypePortlet</portlet-name>
 		<display-name xml:lang="EN">manageSubscriptionTypePortlet</display-name>
