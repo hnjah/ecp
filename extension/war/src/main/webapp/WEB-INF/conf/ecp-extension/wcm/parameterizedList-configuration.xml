@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
+   xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
+
+	<component>
+		<type>org.exoplatform.ecp.services.ParameterizedListService</type>
+		<init-params>
+			<values-param>
+				<name>companyTypes</name>
+				<value>customer</value>
+				<value>partners</value>
+				<value>leads</value>
+			</values-param>
+			<values-param>
+				<name>category.properties</name>
+				<value>product</value>
+				<value>family</value>
+				<value>sla</value>
+				<value>core</value>
+				<value>duration</value>
+				<value>partnership</value>
+				<value>training</value>
+				<value>location</value>
+			</values-param>
+			<properties-param>
+				<name>product</name>
+				<description>product</description>
+				<property name="PLT" value="eXo Platform 3.5" />
+				<property name="PLT-JBOSS" value="eXo Platform For Jboss" />
+				<property name="30 Days" value="eXoPlatform 30 Days" />
+			</properties-param>
+			<properties-param>
+				<name>family</name>
+				<description>family</description>
+				<property name="EXP" value="Express" />
+				<property name="ENT" value="Entreprise" />
+				<property name="UXP" value="UXPaaS" />
+				<property name="DEV" value="Developper" />
+				<property name="QSP-DEV" value="Quick Start Program" />
+				<property name="TRIAL" value="Trial" />
+			</properties-param>
+			<properties-param>
+				<name>sla</name>
+				<description>sla</description>
+				<property name="PREM" value="Premium" />
+				<property name="STD" value="Standard" />
+				<property name="ADV" value="Advanced" />
+			</properties-param>
+			<properties-param>
+				<name>core</name>
+				<description>core</description>
+				<property name="8" value="8 Cores" />
+				<property name="16" value="16 Cores" />
+				<property name="64" value="64 Cores" />
+			</properties-param>
+			<properties-param>
+				<name>duration</name>
+				<description>duration</description>
+				<property name="1Y" value="1 Year" />
+				<property name="3Y" value="3 Years" />
+			</properties-param>
+			<properties-param>
+				<name>partnership</name>
+				<description>partnership</description>
+				<property name="SILV" value="Partnership-Silver" />
+				<property name="GOLD" value="Partnership-Gold" />
+				<property name="PLAT" value="Partnership-Platinum" />
+				<property name="AUTH" value="Partnership-Authorized" />
+				<property name="PREM" value="Partnership-Premier" />
+			</properties-param>
+			<properties-param>
+				<name>training</name>
+				<description>training</description>
+				<property name="FUN" value="eXo Fundamentals" />
+				<property name="DEV" value="eXo Developer" />
+				<property name="ADM" value="eXo Administrator" />
+			</properties-param>
+			<properties-param>
+				<name>location</name>
+				<description>location</description>
+				<property name="PUB" value="Public" />
+				<property name="ONSITE" value="On site" />
+			</properties-param>
+			<properties-param>
+				<name>consultingDuration</name>
+				<description>consultingDuration</description>
+				<property name="Cons-5" value="Consulting Credit 5 days" />
+				<property name="Cons-10" value="Consulting Credit 10 days" />
+				<property name="Cons-20" value="Consulting Credit 20 days" />
+				<property name="Cons-30" value="Consulting Credit 30 days" />
+				<property name="Cons-50" value="Consulting Credit 50 days" />
+			</properties-param>
+		</init-params>
+	</component>
+
+</configuration>
