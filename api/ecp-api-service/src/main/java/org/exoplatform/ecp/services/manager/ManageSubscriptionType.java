@@ -11,12 +11,31 @@ import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
 
 import org.exoplatform.ecp.model.Category;
+import org.exoplatform.ecp.model.SubscriptionType;
 import org.exoplatform.ecp.services.Constants;
 import org.exoplatform.ecp.services.tool.Tools;
 
-public class ManageCategory {
+public class ManageSubscriptionType {
 	
-	public ManageCategory(){
+	public ManageSubscriptionType(){
+	}
+	
+	public void addSubscriptionType(SubscriptionType subscriptionType) throws Exception{
+		Session session = null;
+		try{
+			session = Tools.getSession(Constants.ECP_WORKSPACE);
+			Node node = (Node)session.getItem(Constants.CATEGORY_PATH + "/" + subscriptionType.getParentCategory());
+			node.addNode(subscriptionType.getName(), Constants.SUBSCRIPTION_TYPE_NODETYPE);
+			
+			node.setProperty(name, value)
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			if(session != null){
+				session.save();
+			}
+		}
+		
 	}
 	
 	public Category getCategory(String categoryName){

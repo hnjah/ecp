@@ -1,0 +1,44 @@
+<div id="$uicomponent.id" class="$uicomponent.id">
+	<table>
+	<%
+		for(uiChild in uicomponent.getChildren()) {
+	%>
+			<tr>
+				<td>
+					<%=_ctx.appRes("UIAddSubscriptionType.label." + uiChild.getId())%>
+				</td>
+				<td>
+					<%uicomponent.renderChild(uiChild) ; %>
+				</td>
+			</tr>
+	<%
+			
+		}
+	%>
+	</table>
+	
+	<% if(!uicomponent.getChildren().get(0).isDisabled()){ %>
+		<div class="UIAction"> 
+			<table class="ActionContainer">
+				<tr>
+					<td>
+						<% 
+							String action = "Add"; 
+							String actionLabel = _ctx.appRes(uicomponent.getName() + ".action." + action);
+							String link = uicomponent.event(action);
+						%>
+						<div onclick="$link" class="ActionButton LightBlueStyle" onmouseover="this.style.color = '#058ee6'" onmouseout="this.style.color='black'">
+							<div class="ButtonLeft">
+								<div class="ButtonRight">
+									<div class="ButtonMiddle">
+										<a href="javascript:void(0);">$actionLabel</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>	
+			</table>
+		</div>
+	<% } %>
+</div>

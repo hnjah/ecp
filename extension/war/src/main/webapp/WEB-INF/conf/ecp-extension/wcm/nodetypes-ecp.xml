@@ -65,11 +65,11 @@
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
-			<propertyDefinition name="ecp:core" requiredType="String" autoCreated="false" mandatory="false"
+			<propertyDefinition name="ecp:duration" requiredType="String" autoCreated="false" mandatory="false"
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
-			<propertyDefinition name="ecp:duration" requiredType="String" autoCreated="false" mandatory="false"
+			<propertyDefinition name="ecp:core" requiredType="String" autoCreated="false" mandatory="false"
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
@@ -112,11 +112,11 @@
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
-			<propertyDefinition name="ecp:core" requiredType="Boolean" autoCreated="false" mandatory="false"
+			<propertyDefinition name="ecp:duration" requiredType="Boolean" autoCreated="false" mandatory="false"
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>
-			<propertyDefinition name="ecp:duration" requiredType="Boolean" autoCreated="false" mandatory="false"
+			<propertyDefinition name="ecp:core" requiredType="Boolean" autoCreated="false" mandatory="false"
 				onParentVersion="COPY" protected="false" multiple="false">
 				<valueConstraints />
 			</propertyDefinition>

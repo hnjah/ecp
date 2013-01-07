@@ -49,6 +49,9 @@
 									<string>ecp-extension</string>
 								</value>
 								<value>
+									<string>ecp-portlets</string>
+								</value>
+								<value>
 									<string>acme-websiteResources</string>
 								</value>
 							</collection>
