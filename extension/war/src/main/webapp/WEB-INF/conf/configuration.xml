@@ -42,4 +42,5 @@
 	<import>war:/conf/ecp-extension/wcm/drives-configuration.xml</import>
 	
 	<import>war:/conf/ecp-extension/services-configuration.xml</import>
+	<import>war:/conf/ecp-extension/wcm/parameterizedList-configuration.xml</import>
 </configuration>

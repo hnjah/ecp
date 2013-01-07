@@ -5,8 +5,8 @@ public class Category {
 	public static String PRODUCT = "ecp:product";
 	public static String FAMILY = "ecp:family";
 	public static String SLA = "ecp:sla";
-	public static String CORE = "ecp:core";
 	public static String DURATION = "ecp:duration";
+	public static String CORE = "ecp:core";
 	public static String PARTNERSHIP = "ecp:partnership";
 	public static String TRAINING = "ecp:training";
 	public static String LOCATION = "ecp:location";
@@ -16,8 +16,8 @@ public class Category {
 	private boolean product;
 	private boolean family;
 	private boolean sla;
-	private boolean core;
 	private boolean duration;
+	private boolean core;
 	private boolean partnership;
 	private boolean training;
 	private boolean location;

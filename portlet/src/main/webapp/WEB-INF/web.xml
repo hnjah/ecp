@@ -3,19 +3,4 @@
                          "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
 	<display-name>ecp-portlets</display-name>
-	<listener>
-		<listener-class>
-			org.exoplatform.services.portletcontainer.impl.servlet.PortletApplicationListener
-		</listener-class>
-	</listener>
-	<servlet>
-		<servlet-name>PortletWrapper</servlet-name>
-		<servlet-class>
-			org.exoplatform.services.portletcontainer.impl.servlet.ServletWrapper
-		</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>PortletWrapper</servlet-name>
-		<url-pattern>/PortletWrapper/*</url-pattern>
-	</servlet-mapping>
 </web-app>

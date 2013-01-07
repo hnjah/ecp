@@ -2,35 +2,65 @@ package org.exoplatform.ecp.services;
 
 import java.util.List;
 
+import org.exoplatform.commons.utils.ExoProperties;
 import org.exoplatform.container.xml.InitParams;
 
 public class ParameterizedListService {
 	
 	private List<String> companyTypes;
 	private List<String> categoryProperties;
-	private List<String> product;
-	private List<String> family;
-	private List<String> sla;
-	private List<String> core;
-	private List<String> duration;
-	private List<String> partnership;
-	private List<String> training;
-	private List<String> location;
-	private List<String> consultingDuration;
+//	private List<LabelValue> product;
+//	private List<LabelValue> family;
+//	private List<LabelValue> sla;
+//	private List<LabelValue> core;
+//	private List<LabelValue> duration;
+//	private List<LabelValue> partnership;
+//	private List<LabelValue> training;
+//	private List<LabelValue> location;
+//	private List<LabelValue> consultingDuration;
+	private ExoProperties product;
+	private ExoProperties family;
+	private ExoProperties sla;
+	private ExoProperties core;
+	private ExoProperties duration;
+	private ExoProperties partnership;
+	private ExoProperties training;
+	private ExoProperties location;
+	private ExoProperties consultingDuration;
 	
 	@SuppressWarnings("unchecked")
 	public ParameterizedListService(InitParams params){
 		companyTypes = params.getValuesParam("companyTypes").getValues();
 		categoryProperties = params.getValuesParam("category.properties").getValues();
-		product = params.getValuesParam("product").getValues();
-		family = params.getValuesParam("family").getValues();
-		sla = params.getValuesParam("sla").getValues();
-		core = params.getValuesParam("core").getValues();
-		duration = params.getValuesParam("duration").getValues();
-		partnership = params.getValuesParam("partnership").getValues();
-		training = params.getValuesParam("training").getValues();
-		location = params.getValuesParam("location").getValues();
-		consultingDuration = params.getValuesParam("consultingDuration").getValues();
+
+		product = params.getPropertiesParam("product").getProperties();
+		family = params.getPropertiesParam("family").getProperties();
+		sla = params.getPropertiesParam("sla").getProperties();
+		core = params.getPropertiesParam("core").getProperties();
+		duration = params.getPropertiesParam("duration").getProperties();
+		partnership = params.getPropertiesParam("partnership").getProperties();
+		training = params.getPropertiesParam("training").getProperties();
+		location = params.getPropertiesParam("location").getProperties();
+		consultingDuration = params.getPropertiesParam("consultingDuration").getProperties();
+		
+//		CollectionValues products = (CollectionValues)params.getObjectParam("product").getObject();
+//		product = products.getLabelValues();
+//		CollectionValues families = (CollectionValues)params.getObjectParam("family").getObject();
+//		family = families.getLabelValues();
+//		CollectionValues slas = (CollectionValues)params.getObjectParam("sla").getObject();
+//		sla = slas.getLabelValues();
+//		CollectionValues cores = (CollectionValues)params.getObjectParam("core").getObject();
+//		core = cores.getLabelValues();
+//		CollectionValues durations = (CollectionValues)params.getObjectParam("duration").getObject();
+//		duration = durations.getLabelValues();
+//		CollectionValues partnerships = (CollectionValues)params.getObjectParam("partnership").getObject();
+//		partnership = partnerships.getLabelValues();
+//		CollectionValues trainings = (CollectionValues)params.getObjectParam("training").getObject();
+//		training = trainings.getLabelValues();
+//		CollectionValues locations = (CollectionValues)params.getObjectParam("location").getObject();
+//		location = locations.getLabelValues();
+//		CollectionValues consultingDurations = (CollectionValues)params.getObjectParam("consultingDuration").getObject();
+//		consultingDuration = consultingDurations.getLabelValues();
 		
 	}
 
@@ -42,39 +72,39 @@ public class ParameterizedListService {
 		return categoryProperties;
 	}
 
-	public List<String> getProduct() {
+	public ExoProperties getProduct() {
 		return product;
 	}
 
-	public List<String> getFamily() {
+	public ExoProperties getFamily() {
 		return family;
 	}
 
-	public List<String> getSla() {
+	public ExoProperties getSla() {
 		return sla;
 	}
 
-	public List<String> getCore() {
+	public ExoProperties getCore() {
 		return core;
 	}
 
-	public List<String> getDuration() {
+	public ExoProperties getDuration() {
 		return duration;
 	}
 
-	public List<String> getPartnership() {
+	public ExoProperties getPartnership() {
 		return partnership;
 	}
 
-	public List<String> getTraining() {
+	public ExoProperties getTraining() {
 		return training;
 	}
 
-	public List<String> getLocation() {
+	public ExoProperties getLocation() {
 		return location;
 	}
 
-	public List<String> getConsultingDuration() {
+	public ExoProperties getConsultingDuration() {
 		return consultingDuration;
 	}
 
