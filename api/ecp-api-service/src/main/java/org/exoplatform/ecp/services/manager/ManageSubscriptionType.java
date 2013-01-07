@@ -27,7 +27,7 @@ public class ManageSubscriptionType {
 			Node node = (Node)session.getItem(Constants.CATEGORY_PATH + "/" + subscriptionType.getParentCategory());
 			node.addNode(subscriptionType.getName(), Constants.SUBSCRIPTION_TYPE_NODETYPE);
 			
-			node.setProperty(name, value)
+			//node.setProperty(name, value);
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
