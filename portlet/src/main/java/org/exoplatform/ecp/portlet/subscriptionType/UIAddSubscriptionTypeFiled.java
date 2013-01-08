@@ -232,8 +232,6 @@ public class UIAddSubscriptionTypeFiled extends UIContainer{
 			UIAddSubscriptionTypeSummary uiAddSubscriptionTypeSummary = uiAddSubscriptionType.getChild(UIAddSubscriptionTypeSummary.class);
 			uiAddSubscriptionTypeSummary.load(description.substring(3), sku.substring(1), subscriptionType);
 			
-			
-			
 			event.getRequestContext().addUIComponentToUpdateByAjax(uiAddSubscriptionType);
 		}
 	}
